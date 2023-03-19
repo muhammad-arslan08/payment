@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.5.xsd"
+  objectQuotingStrategy="QUOTE_ONLY_RESERVED_WORDS">
+  <changeSet id="1679061325119-001" author="arslan">
+    <!-- payment method data -->
+    <insert tableName="payment_method">
+      <column name="id" value="1"/>
+      <column name="name" value="credit card"/>
+      <column name="display_name" value="credit card"/>
+      <column name="payment_type" value="CREDIT_CARD"/>
+    </insert>
+    <insert tableName="payment_method">
+      <column name="id" value="2"/>
+      <column name="name" value="alfa_lb"/>
+      <column name="display_name" value="Alfa Lebanon"/>
+      <column name="payment_type" value="MOBILE_CARRIER"/>
+    </insert>
+    <insert tableName="payment_method">
+      <column name="id" value="3"/>
+      <column name="name" value="voucher"/>
+      <column name="display_name" value="Voucher"/>
+      <column name="payment_type" value="VOUCHER"/>
+    </insert>
+
+    <!-- payment plan data -->
+    <insert tableName="payment_plan">
+      <column name="id" value="1"/>
+      <column name="net_amount" value="5.99"/>
+      <column name="tax_amount" value="0"/>
+      <column name="gross_amount" value="5.99"/>
+      <column name="currency" value="USD"/>
+      <column name="duration" value="Month"/>
+      <column name="payment_method_id" value="1"/>
+    </insert>
+    <insert tableName="payment_plan">
+      <column name="id" value="2"/>
+      <column name="net_amount" value="5.99"/>
+      <column name="tax_amount" value="0"/>
+      <column name="gross_amount" value="5.99"/>
+      <column name="currency" value="USD"/>
+      <column name="duration" value="Month"/>
+      <column name="payment_method_id" value="2"/>
+    </insert>
+    <insert tableName="payment_plan">
+      <column name="id" value="3"/>
+      <column name="net_amount" value="10"/>
+      <column name="tax_amount" value="0"/>
+      <column name="gross_amount" value="10"/>
+      <column name="currency" value="SAR"/>
+      <column name="duration" value="Week"/>
+      <column name="payment_method_id" value="2"/>
+    </insert>
+  </changeSet>
+
+</databaseChangeLog>
